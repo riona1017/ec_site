@@ -44,7 +44,7 @@ class OwnersController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.owner::class],
-            'password' => ['required', 'confirmed', Rules\Password::min(8)->defaults()],
+            'password' => ['required', 'confirmed', Rules\Password::min(8)->defaults()], 
         ]);
 
         Owner::create([
@@ -54,7 +54,7 @@ class OwnersController extends Controller
         ]);
 
         return redirect()->route('admin.owners.index')
-        ->with('message', 'オーナー登録が完了しました');
+        ->with('success_message', 'オーナー登録が完了しました'); 
     }
 
     /**
@@ -103,7 +103,7 @@ class OwnersController extends Controller
         $owner->save();
 
         return redirect()->route('admin.owners.index')
-        ->with('message', 'オーナー情報を更新しました');
+        ->with('success_message', 'オーナー情報を更新しました');
     }
 
     /**
@@ -114,6 +114,9 @@ class OwnersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Owner::findOrfail($id)->delete();
+
+        return redirect()->route('admin.owners.index')
+        ->with('delete_message', 'オーナー情報を削除しました');
     }
 }
