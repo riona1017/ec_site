@@ -107,6 +107,13 @@ class OwnersController extends Controller
         return redirect()->route('admin.owners.index')
         ->with('success_message', 'オーナー情報を更新しました');
     }
+    
+    public function restoreExpiredOwner($id){
+        $restoredOwner = Owner::onlyTrashed()->find($id)->restore();
+
+        return redirect()->route('admin.expired-owners.index', compact('restoredOwner'))
+        ->with('success_message', 'オーナーデータを復元しました');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -133,12 +140,5 @@ class OwnersController extends Controller
 
         return redirect()->route('admin.expired-owners.index')
         ->with('delete_message', 'オーナー情報を完全に削除しました');
-    }
-
-    public function restoreExpiredOwner($id){
-        $restoredOwner = Owner::onlyTrashed()->find($id)->restore();
-
-        return redirect()->route('admin.expired-owners.index', compact('restoredOwner'))
-        ->with('success_message', 'オーナーデータを復元しました');
     }
 }
