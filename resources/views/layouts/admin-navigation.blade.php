@@ -14,11 +14,11 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
+                    {{-- <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
                         {{ __('Dashboard') }}
-                    </x-nav-link>
+                    </x-nav-link> --}}
                     <x-nav-link :href="route('admin.owners.index')" :active="request()->routeIs('admin.owners.index')">
-                        オーナー管理
+                        オーナー一覧
                     </x-nav-link>
                     <x-nav-link :href="route('admin.expired-owners.index')" :active="request()->routeIs('admin.exxpired-owners.index')">
                         その他
@@ -42,9 +42,9 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('admin.profile.edit')">
+                        {{-- <x-dropdown-link :href="route('admin.profile.edit')">
                             {{ __('Profile') }}
-                        </x-dropdown-link>
+                        </x-dropdown-link> --}}
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('admin.logout') }}">
@@ -74,9 +74,19 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
+        {{-- <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+        </div> --}}
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('admin.owners.index')" :active="request()->routeIs('admin.owners.index')">
+                オーナー一覧
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('admin.expired-owners.index')" :active="request()->routeIs('admin.expired-owners.index')">
+                その他
             </x-responsive-nav-link>
         </div>
 
@@ -88,9 +98,9 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('admin.profile.edit')">
+                {{-- <x-responsive-nav-link :href="route('admin.profile.edit')">
                     {{ __('Profile') }}
-                </x-responsive-nav-link>
+                </x-responsive-nav-link> --}}
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('admin.logout') }}">
