@@ -8,6 +8,8 @@ use App\Models\Owner;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
+use function Pest\Laravel\delete;
+
 class OwnersController extends Controller
 {
 
@@ -118,5 +120,25 @@ class OwnersController extends Controller
 
         return redirect()->route('admin.owners.index')
         ->with('delete_message', 'オーナー情報を削除しました');
+    }
+
+    public function expiredOwnerIndex(){
+        $expiredOwners = Owner::onlyTrashed()->get();
+
+        return view('admin.expired-owners', compact('expiredOwners'));
+    }
+
+    public function expiredOwnerDestroy($id){
+        Owner::onlyTrashed()->findOrFail($id)->forceDelete();
+
+        return redirect()->route('admin.expired-owners.index')
+        ->with('delete_message', 'オーナー情報を完全に削除しました');
+    }
+
+    public function restoreExpiredOwner($id){
+        $restoredOwner = Owner::onlyTrashed()->find($id)->restore();
+
+        return redirect()->route('admin.expired-owners.index', compact('restoredOwner'))
+        ->with('success_message', 'オーナーデータを復旧しました');
     }
 }
