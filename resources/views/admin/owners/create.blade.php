@@ -43,7 +43,7 @@
                                         <div class="relative">
                                         <label for="password_confirmation" class="leading-7 text-sm text-gray-600">パスワード確認</label>
                                         <input type="password" id="password_confirmation" name="password_confirmation" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-white focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                        
+                                        <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                                         </div>
                                     </div>
                                     <div class="p-2 w-full flex justify-around mt-4">

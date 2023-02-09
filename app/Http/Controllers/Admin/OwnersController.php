@@ -89,7 +89,13 @@ class OwnersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'confirmed', Rules\Password::min(8)->defaults()],
+        ]);
+
         $owner = Owner::findOrfail($id);
         $owner->name = $request->name;
         $owner->email = $request->email;
