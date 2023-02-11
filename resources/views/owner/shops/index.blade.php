@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <x-flash-message />
                     @foreach ($shops as $shop)
-                        <div class="w-1/2 p-4">
+                        <div class="w-full md:w-1/2 p-4">
                             <a href="{{ route('owner.shops.edit', ['shop' => $shop->id]) }}">
                                 <div class="border rounded-md p-4">
                                     <div class="md-4">
@@ -21,7 +21,7 @@
                                         <span class="border p-2 rounded-md bg-red-400 text-white">停止中</span>
                                         @endif
                                     </div>
-                                    <div class="mt-2 text-xl">{{ $shop->name }}</div>
+                                    <div class="mt-4 text-lg md:text-xl">{{ $shop->name }}</div>
                                     <x-thumbnail :filename="$shop->filename" type="shops" />
                                 </div>
                             </a>
