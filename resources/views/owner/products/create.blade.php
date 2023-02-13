@@ -24,7 +24,6 @@
                                         @endforeach
                                     @endforeach
                                 </select>
-                                <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                 </div>
                             </div>
                             <x-select-image :images="$images" name="image1" />
