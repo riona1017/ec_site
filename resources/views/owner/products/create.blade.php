@@ -44,7 +44,7 @@
                                 <div class="relative">
                                 <label for="quantity" class="leading-7 text-sm text-gray-600">初期在庫 ※必須</label>
                                 <input type="number" id="quantity" name="quantity" value="{{ old('quantity') }}" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-white focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                <x-input-error :messages="$errors->get('sort_order')" class="mt-2" />
+                                <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
                                 </div>
                             </div>
                             <div class="p-2 md:w-1/2 mx-auto">
@@ -57,6 +57,7 @@
                                             </option>
                                         @endforeach
                                     </select>
+                                    <x-input-error :messages="$errors->get('shop_id')" class="mt-2" />
                                 </div>
                             </div>
                                 <div class="p-2 md:w-1/2 mx-auto">
@@ -72,12 +73,17 @@
                                         @endforeach
                                     @endforeach
                                 </select>
+                                <x-input-error :messages="$errors->get('category')" class="mt-2" />
                                 </div>
                             </div>
                             <x-select-image :images="$images" name="image1" />
                             <x-select-image :images="$images" name="image2" />
                             <x-select-image :images="$images" name="image3" />
                             <x-select-image :images="$images" name="image4" />
+                            <x-input-error :messages="$errors->get('image1')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('image2')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('image3')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('image4')" class="mt-2" />
                             <div class="p-2 md:w-1/2 mx-auto">
                                 <div class="relative flex justify-around">
                                     <div><input type="radio" name="is_selling" value="1" class="mr-2" checked>販売中</div>
