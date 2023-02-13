@@ -46,6 +46,10 @@
                             {{ __('Profile') }}
                         </x-dropdown-link> --}}
 
+                        <x-dropdown-link :href="route('owner.login')">
+                            オーナー用ログイン
+                        </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('admin.logout') }}">
                             @csrf
@@ -101,6 +105,10 @@
                 {{-- <x-responsive-nav-link :href="route('admin.profile.edit')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link> --}}
+
+                <x-dropdown-link :href="route('owner.login')">
+                    オーナー用ログイン
+                </x-dropdown-link>
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('admin.logout') }}">

@@ -14,9 +14,9 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('owner.dashboard')" :active="request()->routeIs('owner.dashboard')">
+                    {{-- <x-nav-link :href="route('owner.dashboard')" :active="request()->routeIs('owner.dashboard')">
                         {{ __('Dashboard') }}
-                    </x-nav-link>
+                    </x-nav-link> --}}
                     <x-nav-link :href="route('owner.shops.index')" :active="request()->routeIs('owner.shops.index')">
                         店舗情報
                     </x-nav-link>
@@ -45,8 +45,12 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('owner.profile.edit')">
+                        {{-- <x-dropdown-link :href="route('owner.profile.edit')">
                             {{ __('Profile') }}
+                        </x-dropdown-link> --}}
+
+                        <x-dropdown-link :href="route('admin.login')">
+                            管理者用ログイン
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -56,7 +60,7 @@
                             <x-dropdown-link :href="route('owner.logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                ログアウト
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -78,9 +82,9 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('owner.dashboard')" :active="request()->routeIs('owner.dashboard')">
+            {{-- <x-responsive-nav-link :href="route('owner.dashboard')" :active="request()->routeIs('owner.dashboard')">
                 {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
             <x-responsive-nav-link :href="route('owner.shops.index')" :active="request()->routeIs('owner.shops.index')">
                 店舗情報
             </x-responsive-nav-link>
@@ -100,9 +104,13 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('owner.profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
+                {{-- <x-dropdown-link :href="route('owner.profile.edit')">
+                            {{ __('Profile') }}
+                        </x-dropdown-link> --}}
+
+                <x-dropdown-link :href="route('admin.login')">
+                    管理者用ログイン
+                </x-dropdown-link>
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('owner.logout') }}">
@@ -111,7 +119,7 @@
                     <x-responsive-nav-link :href="route('owner.logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        ログアウト
                     </x-responsive-nav-link>
                 </form>
             </div>
