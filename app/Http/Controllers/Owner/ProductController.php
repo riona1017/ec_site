@@ -139,8 +139,60 @@ class ProductController extends Controller
     {
         $request->validate([
             'current_quantity' => ['required', 'integer'],
-            'type' => ['required', 'boolean'],
         ]);
+
+        //画面表示後に在庫数が変わっているかの確認
+        $product = Product::findOrFail($id);
+        $quantity = Stock::where('product_id', $product->id)->sum('quantity');
+
+        if($request->current_quantity !== $quantity){
+            $id = $request->route()->parameter('product');
+
+            return redirect()->route('owner.products.edit', ['product' => $id])
+            ->with('delete_message', '在庫数が変更されています。再度確認してください。');
+
+        } else {
+            try{
+                DB::transaction(function () use($request, $product){
+                    $product->name = $request->name;
+                    $product->information = $request->information;
+                    $product->price = $request->price;
+                    $product->sort_order = $request->sort_order;
+                    $product->shop_id = $request->shop_id;
+                    $product->secondary_category_id = $request->category;
+                    $product->image1 = $request->image1;
+                    $product->image2 = $request->image2;
+                    $product->image3 = $request->image3;
+                    $product->image4 = $request->image4;
+                    $product->is_selling = $request->is_selling;
+                    
+                    $product->save();
+
+                    //追加、削減の1,2がわかりにくいためクラスで対応
+                    if ($request->type === \Constant::PRODUCT_LIST['add']) {
+                        $newQuantity = $request->quantity;
+
+                    }
+                    if ($request->type === \Constant::PRODUCT_LIST['reduce']) {
+                        $newQuantity = $request->quantity * -1;
+                    }
+
+                    Stock::create([
+                        'product_id' => $product->id,
+                        'type' => $request->type,
+                        'quantity' => $newQuantity,
+                    ]); 
+                }, 2);
+            }catch(Throwable $e){
+                Log::error($e);
+                throw $e;
+            }
+    
+    
+            return redirect()->route('owner.products.index')
+            ->with('success_message', '商品情報を更新しました'); 
+        }
+
     }
 
     /**
