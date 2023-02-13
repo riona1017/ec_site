@@ -38,7 +38,7 @@
 
 
 <div class="flex justify-around items-center mb-4">
-    <a class="bg-gray-100 border-0 py-2 px-8 mb-4 focus:outline-none hover:bg-gray-300 rounded" data-micromodal-trigger="{{ $modal }}" href='javascript:;'>ファイルを選択</a>
+    <a class="py-2 px-4 bg-gray-200" data-micromodal-trigger="{{ $modal }}" href='javascript:;'>ファイルを選択</a>
     <div class="w-1/4">
         <img id="{{ $name }}_thumbnail" src="">
     </div>
