@@ -62,17 +62,17 @@ class CategorySeeder extends Seeder
             ],
             [
                 'name' => '帽子',
-                'sort_order' => 6,
-                'primary_category_id' => 3
-            ],
-            [
-                'name' => '靴',
                 'sort_order' => 7,
                 'primary_category_id' => 3
             ],
             [
-                'name' => 'バッグ',
+                'name' => '靴',
                 'sort_order' => 8,
+                'primary_category_id' => 3
+            ],
+            [
+                'name' => 'バッグ',
+                'sort_order' => 9,
                 'primary_category_id' => 3
             ],
         ]);
