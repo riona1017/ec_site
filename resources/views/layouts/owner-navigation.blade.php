@@ -88,12 +88,12 @@
             <x-responsive-nav-link :href="route('owner.shops.index')" :active="request()->routeIs('owner.shops.index')">
                 店舗情報
             </x-responsive-nav-link>
-            <x-nav-link :href="route('owner.images.index')" :active="request()->routeIs('owner.images.index')">
+            <x-responsive-nav-link :href="route('owner.images.index')" :active="request()->routeIs('owner.images.index')">
                 画像管理
-            </x-nav-link>
-            <x-nav-link :href="route('owner.products.index')" :active="request()->routeIs('owner.products.index')">
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('owner.products.index')" :active="request()->routeIs('owner.products.index')">
                 商品管理
-            </x-nav-link>
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -108,9 +108,9 @@
                             {{ __('Profile') }}
                         </x-dropdown-link> --}}
 
-                <x-dropdown-link :href="route('admin.login')">
+                <x-responsive-nav-lin :href="route('admin.login')">
                     管理者用ログイン
-                </x-dropdown-link>
+                </x-responsive-nav-lin>
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('owner.logout') }}">

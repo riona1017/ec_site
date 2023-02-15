@@ -106,9 +106,9 @@
                     {{ __('Profile') }}
                 </x-responsive-nav-link> --}}
 
-                <x-dropdown-link :href="route('owner.login')">
+                <x-responsive-nav-lin :href="route('owner.login')">
                     オーナー用ログイン
-                </x-dropdown-link>
+                </x-responsive-nav-lin>
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('admin.logout') }}">
