@@ -47,39 +47,6 @@
                               </tbody>
                             </table>
                           </div>
-                        <x-flash-message />
-                        <div class="lg:w-3/4 w-full mx-auto overflow-auto">
-                          <table class="table-auto w-full text-left whitespace-no-wrap">
-                            <thead>
-                              <tr>
-                                <th class="md:px-4 pl-2 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">名前</th>
-                                <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">メールアドレス</th>
-                                <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
-                                <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              @foreach ($expiredOwners as $owner)
-                              <tr>
-                                <td class="md:px-4 pl-2 py-3">{{ $owner->name }}</td>
-                                <td class="md:px-4 py-3">{{ $owner->email }}</td>
-                                <form id="restore_{{ $owner->id }}" method="post" action="{{ route('admin.expired-owners.restore', ['owner' => $owner->id]) }}">
-                                  @csrf
-                                  <td class="md:px-4 py-4 text-center">
-                                    <button onclick="location.href='{{ route('admin.expired-owners.restore', ['owner' => $owner->id])}}'" class="text-white bg-yellow-500 border-0 py-2 md:px-6 px-4 focus:outline-none hover:bg-yellow-600 rounded">復元</button>
-                                  </td>
-                                </form>
-                                <form id="delete_{{ $owner->id }}" method="post" action="{{ route('admin.expired-owners.destroy', ['owner' => $owner->id]) }}">
-                                  @csrf
-                                  <td class="md:px-4 py-4 text-center">
-                                    <a href="#" data-id="{{ $owner->id }}" onclick="deletePost(this)" class="text-white bg-red-500 border-0 py-2 md:px-6 px-4 focus:outline-none hover:bg-red-600 rounded">削除</a>
-                                  </td>
-                                </form>
-                              </tr>
-                              @endforeach
-                            </tbody>
-                          </table>
-                        </div>
                       </div>
                     </section>
               </div>
