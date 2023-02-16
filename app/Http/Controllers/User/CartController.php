@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Cart;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Stock;
 
 class CartController extends Controller
 {
@@ -61,14 +62,33 @@ class CartController extends Controller
         $lineItems = [];
 
         foreach($products as $product) {
-            $lineItem = [
-                'name' => $product->name,
-                'description' => $product->information,
-                'amount' => $product->price,
-                'currency' => 'jpy',
-                'quantity' => $product->pivot->quantity,
-            ];
-            array_push($lineItems, $lineItem); //配列$lineItemsに$lineItemを追加
+            $quantity = '';
+            $quantity = Stock::where('product_id', $product->id)->sum('quantity'); //現在の在庫数
+
+            //在庫数が足りない場合はカート画面に戻す
+            if($product->pivot->quantity > $quantity) {
+                return redirect()->route('user.cart.index');
+            } else {
+                $lineItem = [
+                    'price_data' => [
+                        'unit_amount' => $product->price,
+                        'currency' => 'JPY',
+                        'product_data' => [
+                            'name' => $product->name,
+                            'description' => $product->information,
+                        ],
+                    ],
+                    'quantity' => $product->pivot->quantity,
+                ];
+                array_push($lineItems, $lineItem); //配列$lineItemsに$lineItemを追加
+            }
+        }
+        foreach($products as $product) {
+            Stock::create([
+                'product_id' => $product->id,
+                'type' => \Constant::PRODUCT_LIST['reduce'],
+                'quantity' => $product->pivot->quantity * -1,
+            ]);
         }
         
         //stripeシークレットキー読み込み
@@ -83,8 +103,10 @@ class CartController extends Controller
         ]);
 
         //stripeパブリックキー読み込み
-        $publicKey = env('STRIPE_PUBLIC_KEY');
+        //$publicKey = env('STRIPE_PUBLIC_KEY');
 
-        return view('user.checkout', compact('session', 'publicKey'));
+        //return view('user.checkout', compact('session', 'publicKey'));
+
+        return redirect($session->url, 303);
     }
 }
