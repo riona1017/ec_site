@@ -53,6 +53,7 @@ class CartController extends Controller
         return redirect()->route('user.cart.index');
     }
 
+
     public function checkout()
     {
         $user = User::findOrFail(Auth::id());
@@ -98,15 +99,39 @@ class CartController extends Controller
             'payment_method_types' => ['card'],
             'line_items' => [$lineItems],
             'mode' => 'payment',
-            'success_url' => route('user.items.index'),
-            'cancel_url' => route('user.cart.index'),
+            'success_url' => route('user.cart.success'),
+            'cancel_url' => route('user.cart.cancel'),
         ]);
 
-        //stripeパブリックキー読み込み
+        //ver変更で使用不可
         //$publicKey = env('STRIPE_PUBLIC_KEY');
-
         //return view('user.checkout', compact('session', 'publicKey'));
 
         return redirect($session->url, 303);
+        
+    }
+
+    //決済成功の場合
+    public function success()
+    {
+        Cart::where('user_id', Auth::id())->delete();
+
+        return redirect()->route('user.items.index');
+    }
+
+    //キャンセルの場合
+    public function cancel()
+    {
+        $user = User::findOrFail(Auth::id());
+
+        foreach($user->products as $product) {
+            Stock::create([
+                'product_id' => $product->id,
+                'type' => \Constant::PRODUCT_LIST['add'],
+                'quantity' => $product->pivot->quantity,
+            ]);
+        }
+
+        return redirect()->route('user.cart.index');
     }
 }
