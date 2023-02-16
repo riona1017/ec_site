@@ -46,6 +46,10 @@
                             {{ __('Profile') }}
                         </x-dropdown-link> --}}
 
+                        <x-dropdown-link :href="route('owner.login')">
+                            オーナー用ログイン
+                        </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('admin.logout') }}">
                             @csrf
@@ -53,7 +57,7 @@
                             <x-dropdown-link :href="route('admin.logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                ログアウト
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -102,6 +106,10 @@
                     {{ __('Profile') }}
                 </x-responsive-nav-link> --}}
 
+                <x-responsive-nav-lin :href="route('owner.login')">
+                    オーナー用ログイン
+                </x-responsive-nav-lin>
+
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('admin.logout') }}">
                     @csrf
@@ -109,7 +117,7 @@
                     <x-responsive-nav-link :href="route('admin.logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        ログアウト
                     </x-responsive-nav-link>
                 </form>
             </div>
