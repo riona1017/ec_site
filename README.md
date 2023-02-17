@@ -12,3 +12,6 @@ storage/app/public/productsフォルダ内に
 ショップの画像フォルダも表示する場合は、
 storage/app/public/shopsフォルダを作成し、
 画像を保存してください。
+
+## 決済について
+決済のテストとしてstripeを利用しています。
