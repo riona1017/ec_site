@@ -132,7 +132,7 @@ class OwnersController extends Controller
     public function restoreExpiredOwner($id){
         $restoredOwner = Owner::onlyTrashed()->find($id)->restore();
 
-        return redirect()->route('admin.expired-owners.index', compact('restoredOwner'))
+        return redirect()->route('admin.owners.index', compact('restoredOwner'))
         ->with('success_message', 'オーナーデータを復元しました');
     }
 
