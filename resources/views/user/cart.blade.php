@@ -19,12 +19,12 @@
                                         <img src="">
                                     @endif
                                 </div>
-                                <div class="md:w-4/12 md:ml-2">{{ $product->name }}</div>
+                                <div class="text-xl md:w-4/12 md:ml-2">{{ $product->name }}</div>
                                 <div class="md:w-3/12 flex justify-around">
                                     <div>{{ $product->pivot->quantity }}個</div>
                                     <div>{{ number_format($product->pivot->quantity * $product->price) }}<span class="text-sm text-gray-700">円（税込）</span></div>
                                 </div>
-                                <div class="md:w-2/12">
+                                <div class="md:w-2/12 md:text-center md:mt-0 text-right mt-10">
                                     <form method="post" action="{{ route('user.cart.delete', ['item' => $product->id]) }}">
                                         @csrf
                                         <button>
@@ -36,11 +36,13 @@
                                 </div>
                             </div>
                         @endforeach
-                        <div class="my-2">
-                            小計:{{ number_format($totalPrice) }}<span class="text-sm text-gray-700">円（税込）</span>
-                        </div>
-                        <div>
-                            <button onclick="location.href='{{ route('user.cart.checkout') }}'" class="flex ml-auto text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded">購入する</button>
+                        <div class="flex justify-around mx-auto mt-2">
+                            <div class="my-2 ">
+                                小計:{{ number_format($totalPrice) }}<span class="text-sm text-gray-700">円（税込）</span>
+                            </div>
+                            <div>
+                                <button onclick="location.href='{{ route('user.cart.checkout') }}'" class="flex ml-auto text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded">購入する</button>
+                            </div> 
                         </div>
                     @else
                         カートに商品が入っていません
