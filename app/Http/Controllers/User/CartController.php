@@ -116,7 +116,7 @@ class CartController extends Controller
     {
         Cart::where('user_id', Auth::id())->delete();
 
-        return redirect()->route('user.items.index');
+        return redirect()->route('user.items.index')->with('success_message', '商品を購入しました');
     }
 
     //キャンセルの場合
