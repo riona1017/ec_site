@@ -1,18 +1,22 @@
 # ECサイト 「SECOND used clothing store」
-
+<br>
+<br>
 <img width="1440" alt="ec_site_home" src="https://user-images.githubusercontent.com/106326448/219935605-e179d333-37b3-4a76-88b4-7a9a9dbe191e.png">　　
 
 
 ## 1.アプリケーション概要　　
-
+<br>
+<br>
 ### マルチログイン可能なECサイトです。
 
 プログラミング学習の成果物として今回のポートフォリオを制作いたしました。
 
 管理者、オーナー、ユーザーからのログインが可能です。　　
-
+<br>
+<br>
 --
-
+<br>
+<br>
 学生時代に古着屋でアルバイトをしていました。
 
 お客様から
