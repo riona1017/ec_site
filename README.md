@@ -69,6 +69,8 @@ password:password123
 
 ### 管理者用テストアカウント
 
+![admin_login](https://user-images.githubusercontent.com/106326448/219937257-aabdd1f9-ddfe-4681-a0c9-73e75aa87b4d.gif)
+
 email:admin@test.com
 
 password:password123
