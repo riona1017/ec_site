@@ -49,6 +49,8 @@ password:password123
 
 ### オーナー用テストアカウント
 
+![owner_login](https://user-images.githubusercontent.com/106326448/219937104-8ae02ceb-59e3-491d-8327-ae30ca9f804e.gif)
+
 ・owner1
 
 email:owner1@test.com
