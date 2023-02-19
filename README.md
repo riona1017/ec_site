@@ -36,6 +36,7 @@
 
 ## 2.テスト用アカウント
 <br>
+
 ### ユーザー用テストアカウント　　
 
 ![user_login](https://user-images.githubusercontent.com/106326448/219936970-82663f48-ea5c-43c3-9999-86424bbc6679.gif)
@@ -66,6 +67,7 @@ password:password123
 (管理者アカウントから新規登録を行なってもらっても大丈夫です。)　　
 <br>
 <br>
+
 ### 管理者用テストアカウント　　
 
 ![admin_login](https://user-images.githubusercontent.com/106326448/219937257-aabdd1f9-ddfe-4681-a0c9-73e75aa87b4d.gif)
@@ -97,11 +99,13 @@ password:password123　　
 また次のページに移動しても並び替え内容は保存されたまま表示されるように設定されています。　　
 <br>
 <br>
+
 ### (3)カート機能、決済(ユーザーログイン必須)　　
 
 ![cart](https://user-images.githubusercontent.com/106326448/219937640-e385eb40-f6df-46b3-8624-a67cc0508f31.gif)　　
 
 <br>
+
 #### ・カート機能
 
 個々の商品の合計金額、すべての商品の合計金額の表示
@@ -111,6 +115,7 @@ password:password123　　
 何もカートに入っていない時の表示画面　　
 <br>
 <br>
+
 #### ・決済
 
 決済のテストとしてstripeを利用しています。
