@@ -35,6 +35,7 @@
 
 <br>
 <br>
+<br>
 
 ## 2.テスト用アカウント
 <br>
@@ -48,8 +49,11 @@ email:test@test.com
 password:password123
 
 (テスト用アカウントを使わず、新規登録を行なってもらっても大丈夫です。)　　
+
 <br>
 <br>
+<br>
+
 ### オーナー用テストアカウント　　
 
 ![owner_login](https://user-images.githubusercontent.com/106326448/219937104-8ae02ceb-59e3-491d-8327-ae30ca9f804e.gif)
@@ -67,6 +71,8 @@ email:owner2@test.com
 password:password123
 
 (管理者アカウントから新規登録を行なってもらっても大丈夫です。)　　
+
+<br>
 <br>
 <br>
 
@@ -77,8 +83,11 @@ password:password123
 email:admin@test.com
 
 password:password123　　
+
 <br>
 <br>
+<br>
+
 ## 3.アプリの特徴　　
 <br>
 
@@ -90,6 +99,8 @@ password:password123　　
 様々な立場から
 
 ショップの情報やオーナー情報、商品情報を逐一更新、削除、新規登録できるよう機能をそれぞれ実装しています。　　
+
+<br>
 <br>
 <br>
 
@@ -102,6 +113,8 @@ password:password123　　
 20件、50件、100件の3つの表示件数からお選びいただけます。
 
 また次のページに移動しても並び替え内容は保存されたまま表示されるように設定されています。　　
+
+<br>
 <br>
 <br>
 
@@ -118,6 +131,8 @@ password:password123　　
 消去ボタンの設置
 
 何もカートに入っていない時の表示画面　　
+
+<br>
 <br>
 <br>
 
@@ -140,8 +155,11 @@ password:password123　　
 国または地域:日本
 
 支払うをクリック　　
+
 <br>
 <br>
+<br>
+
 ## 4.機能一覧　　
 <br>
 
