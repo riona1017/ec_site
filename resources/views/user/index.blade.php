@@ -6,6 +6,7 @@
             </h2>
                 <form method="get" action="{{ route('user.items.index') }}">
                     <div class="lg:flex lg:justify-around">
+                        <x-flash-message />
                         <div class="lg:flex items-center">
                             <select name="category" class="mb-2 lg:mr-2 lg:mb-0">
                                 <option value="0" @if(\Request::get('category') === '0') selected @endif>全て</option>
