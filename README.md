@@ -202,3 +202,11 @@ password:password123　　
 |削除機能|カートの商品を削除できる|
 |商品購入機能|stripeを用いてテスト決済ができる|
 
+<br>
+<br>
+<br>
+
+## 5.DB設計
+<br>
+
+<img width="689" alt="db" src="https://user-images.githubusercontent.com/106326448/219938729-e6ac4021-cb70-4acc-ac20-08c51ff99a17.png">
