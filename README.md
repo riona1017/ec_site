@@ -37,7 +37,7 @@
 
 ### ユーザー用テストアカウント
 
-![user_login](https://user-images.githubusercontent.com/106326448/219935850-f035765e-aa6c-46c9-8e93-e7c0cde0438d.gif)
+![user_login](https://user-images.githubusercontent.com/106326448/219936970-82663f48-ea5c-43c3-9999-86424bbc6679.gif)
 
 email:test@test.com
 
