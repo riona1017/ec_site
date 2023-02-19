@@ -14,6 +14,7 @@
 <br>
 <br>
 <br>
+<br>
 学生時代に古着屋でアルバイトをしていました。
 
 お客様から
@@ -36,7 +37,7 @@
 ## 2.テスト用アカウント
 <br>
 ### ユーザー用テストアカウント　　
-<br>
+
 ![user_login](https://user-images.githubusercontent.com/106326448/219936970-82663f48-ea5c-43c3-9999-86424bbc6679.gif)
 
 email:test@test.com
@@ -47,7 +48,7 @@ password:password123
 <br>
 <br>
 ### オーナー用テストアカウント　　
-<br>
+
 ![owner_login](https://user-images.githubusercontent.com/106326448/219937104-8ae02ceb-59e3-491d-8327-ae30ca9f804e.gif)
 
 ・owner1
@@ -66,7 +67,7 @@ password:password123
 <br>
 <br>
 ### 管理者用テストアカウント　　
-<br>
+
 ![admin_login](https://user-images.githubusercontent.com/106326448/219937257-aabdd1f9-ddfe-4681-a0c9-73e75aa87b4d.gif)
 
 email:admin@test.com
@@ -86,7 +87,7 @@ password:password123　　
 <br>
 <br>
 ### (2)表示順、ページネーション　　
-<br>
+
 ![pagination](https://user-images.githubusercontent.com/106326448/219937378-bd171ea9-2b9d-4d02-be5b-cdd3fc867f17.gif)
 
 ユーザー画面からおすすめ順、料金の高い順・低い順、新しい順、古い順の5つに並び替えできます。
@@ -97,7 +98,7 @@ password:password123　　
 <br>
 <br>
 ### (3)カート機能、決済(ユーザーログイン必須)　　
-<br>
+
 ![cart](https://user-images.githubusercontent.com/106326448/219937640-e385eb40-f6df-46b3-8624-a67cc0508f31.gif)　　
 
 <br>
