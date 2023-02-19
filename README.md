@@ -90,6 +90,8 @@ password:password123
 
 ### (2)表示順、ページネーション
 
+![pagination](https://user-images.githubusercontent.com/106326448/219937378-bd171ea9-2b9d-4d02-be5b-cdd3fc867f17.gif)
+
 ユーザー画面からおすすめ順、料金の高い順・低い順、新しい順、古い順の5つに並び替えできます。
 
 20件、50件、100件の3つの表示件数からお選びいただけます。
