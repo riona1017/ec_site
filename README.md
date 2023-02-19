@@ -6,15 +6,12 @@
 
 ## 1.アプリケーション概要　　
 <br>
-<br>
 ### マルチログイン可能なECサイトです。
 
 プログラミング学習の成果物として今回のポートフォリオを制作いたしました。
 
 管理者、オーナー、ユーザーからのログインが可能です。　　
 <br>
-<br>
---
 <br>
 <br>
 学生時代に古着屋でアルバイトをしていました。
@@ -37,10 +34,9 @@
 
 
 ## 2.テスト用アカウント
-
-
+<br>
 ### ユーザー用テストアカウント　　
-
+<br>
 ![user_login](https://user-images.githubusercontent.com/106326448/219936970-82663f48-ea5c-43c3-9999-86424bbc6679.gif)
 
 email:test@test.com
@@ -48,11 +44,10 @@ email:test@test.com
 password:password123
 
 (テスト用アカウントを使わず、新規登録を行なってもらっても大丈夫です。)　　
-
-
-
+<br>
+<br>
 ### オーナー用テストアカウント　　
-
+<br>
 ![owner_login](https://user-images.githubusercontent.com/106326448/219937104-8ae02ceb-59e3-491d-8327-ae30ca9f804e.gif)
 
 ・owner1
@@ -68,33 +63,30 @@ email:owner2@test.com
 password:password123
 
 (管理者アカウントから新規登録を行なってもらっても大丈夫です。)　　
-
-
-
+<br>
+<br>
 ### 管理者用テストアカウント　　
-
+<br>
 ![admin_login](https://user-images.githubusercontent.com/106326448/219937257-aabdd1f9-ddfe-4681-a0c9-73e75aa87b4d.gif)
 
 email:admin@test.com
 
 password:password123　　
-
-
-
+<br>
+<br>
 ## 3.アプリの特徴　　
-
-
+<br>
 ### (1)マルチログイン　　
-
+<br>
 管理者、オーナー、ユーザーからログインできます。
 
 様々な立場から
 
 ショップの情報やオーナー情報、商品情報を逐一更新、削除、新規登録できるよう機能をそれぞれ実装しています。　　
-
-
+<br>
+<br>
 ### (2)表示順、ページネーション　　
-
+<br>
 ![pagination](https://user-images.githubusercontent.com/106326448/219937378-bd171ea9-2b9d-4d02-be5b-cdd3fc867f17.gif)
 
 ユーザー画面からおすすめ順、料金の高い順・低い順、新しい順、古い順の5つに並び替えできます。
@@ -102,13 +94,13 @@ password:password123　　
 20件、50件、100件の3つの表示件数からお選びいただけます。
 
 また次のページに移動しても並び替え内容は保存されたまま表示されるように設定されています。　　
-
-
+<br>
+<br>
 ### (3)カート機能、決済(ユーザーログイン必須)　　
-
+<br>
 ![cart](https://user-images.githubusercontent.com/106326448/219937640-e385eb40-f6df-46b3-8624-a67cc0508f31.gif)　　
 
-
+<br>
 #### ・カート機能
 
 個々の商品の合計金額、すべての商品の合計金額の表示
@@ -116,8 +108,8 @@ password:password123　　
 消去ボタンの設置
 
 何もカートに入っていない時の表示画面　　
-
-
+<br>
+<br>
 #### ・決済
 
 決済のテストとしてstripeを利用しています。
@@ -137,12 +129,10 @@ password:password123　　
 国または地域:日本
 
 支払うをクリック　　
-
-
-
+<br>
+<br>
 ## 4.機能一覧　　
-
-
+<br>
 ### 管理者の機能
 
 |   機能　   |       概要       |  
