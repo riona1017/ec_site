@@ -213,3 +213,24 @@ password:password123　　
 <br>
 
 <img width="689" alt="db" src="https://user-images.githubusercontent.com/106326448/219938729-e6ac4021-cb70-4acc-ac20-08c51ff99a17.png">
+
+<br>
+<br>
+<br>
+
+## 6.工夫した点
+<br>
+
+### N+1問題の対策
+
+Eager Loadingにてリレーション先のリレーション情報を取得し、
+
+withメゾット、リレーションをドットで繋ぐことにより対策しました。
+
+<br>
+
+### セッション・クッキー
+
+admin、owner、userそれぞれでクッキーを作成し
+
+adminログイン後にownerにログインした際など表示の不具合対策を行いました。
